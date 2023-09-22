@@ -1,14 +1,12 @@
 <?php
 
-namespace Sitebill\Dragon;
+namespace Sitebill\Livewire;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Sitebill\Dragon\app\Middleware\Cors;
-use Sitebill\Dragon\Eloquent\DynamicModel;
 
-class DragonServiceProvider extends ServiceProvider
+class LivewireServiceProvider extends ServiceProvider
 {
     /**
      * Where the route file lives, both inside the package and in the app (if overwritten).
