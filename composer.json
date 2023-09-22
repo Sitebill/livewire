@@ -1,0 +1,30 @@
+{
+    "name": "sitebill/livewire",
+    "description": "Sitebill Laravel-Livewire Kit",
+    "license": "MIT",
+    "homepage": "https://www.sitebill.ru/",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Dmitriy Kondin",
+            "email": "dkondin@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.1",
+        "doctrine/dbal": ">=3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sitebill\\Livewire\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sitebill\\Livewire\\LivewireServiceProvider"
+            ]
+        }
+    }
+}
