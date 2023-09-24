@@ -2,11 +2,13 @@
     $menu = [
         [
             'route' => 'panel.dashboard.index',
-            'title' => __('bap.dashboard'),
+            'permission' => 'admin_dashboard_index',
+            'title' => __('Главная'),
             'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="13" r="2" /><line x1="13.45" y1="11.55" x2="15.5" y2="9.5" /><path d="M6.4 20a9 9 0 1 1 11.2 0z" /></svg>',
         ],
         [
             'route' => 'panel.company.index',
+            'permission' => 'company_index',
             'title' => __('Компании'),
             'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-factory" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -16,6 +18,69 @@
    <path d="M3 21l19 0"></path>
 </svg>',
         ],
+
+        [
+            'route' => 'admin.user.*',
+            'permission' => 'admin_user_management',
+            'title' => __('Доступы'),
+            'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-lock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"></path>
+   <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
+   <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
+</svg>',
+            'childs' => [
+                [
+                    'route' => 'admin.user.index',
+                    'permission' => 'admin_user_index',
+                    'title' => __('Пользователи'),
+                    'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+   <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+</svg>',
+                ],
+                [
+                    'route' => 'admin.user.team.index',
+                    'permission' => 'admin_user_teams',
+                    'title' => __('Команды'),
+                    'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users-group" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+   <path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1"></path>
+   <path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+   <path d="M17 10h2a2 2 0 0 1 2 2v1"></path>
+   <path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+   <path d="M3 13v-1a2 2 0 0 1 2 -2h2"></path>
+</svg>',
+                ],
+                [
+                    'route' => 'admin.user.role.index',
+                    'permission' => 'admin_user_roles',
+                    'title' => __('Роли'),
+                    'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-binary-tree-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M14 6a2 2 0 1 0 -4 0a2 2 0 0 0 4 0z"></path>
+   <path d="M7 14a2 2 0 1 0 -4 0a2 2 0 0 0 4 0z"></path>
+   <path d="M21 14a2 2 0 1 0 -4 0a2 2 0 0 0 4 0z"></path>
+   <path d="M14 18a2 2 0 1 0 -4 0a2 2 0 0 0 4 0z"></path>
+   <path d="M12 8v8"></path>
+   <path d="M6.316 12.496l4.368 -4.992"></path>
+   <path d="M17.684 12.496l-4.366 -4.99"></path>
+</svg>',
+                ],
+                [
+                    'route' => 'admin.user.permission.index',
+                    'permission' => 'admin_user_permissions',
+                    'title' => __('Разрешения'),
+                    'icon' => '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-point" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+</svg>',
+                ],
+            ]
+        ],
+
 /*        [
             'route' => 'panel.dashboard.index',
             'title' => __('bap.dashboard'),
@@ -59,115 +124,10 @@
                 @include('sitebill-livewire::layouts.global.user-navbar')
             </div>
             <div class="collapse navbar-collapse" id="navbar-menu">
-                <ul class="navbar-nav pt-lg-3">
-
-                    @foreach( $menu as $item )
-                        <li class="nav-item @if(\Illuminate\Support\Facades\Route::is($item['route'])) active @endif">
-                            <a class="nav-link" href="{{ route($item['route']) }}" >
-                                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
-                                        {!! $item['icon'] !!}
-                                    </span>
-                                <span class="nav-link-title">
-                                      {{ $item['title'] }}
-                                    </span>
-                            </a>
-                        </li>
-                    @endforeach
-                    @if(config('modules.wallet'))
-                    <li class="nav-item @if(\Illuminate\Support\Facades\Route::is('panel.wallet.index')) active @endif">
-                        <a class="nav-link" href="{{ route('panel.wallet.index') }}" >
-                            <svg xmlns="http://www.w3.org/2000/svg" class="nav-link-icon d-md-none d-lg-inline-block" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"></path>
-                                <path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"></path>
-                            </svg>
-                            <span class="nav-link-title">
-                                      {{ __('bap.wallet') }}
-                            </span>
-                        </a>
-                    </li>
-                    @endif
-                    @includeIf('layouts.custom.panel')
-
-                    @if(config('modules.support'))
-                        <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('panel.support.*')) show active @endif">
-                            <a class="nav-link dropdown-toggle" href="#navbar-support" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">
-                                  <span class="nav-link-icon d-md-none d-lg-inline-block">
-	                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="9" /><path d="M10 16.5l2 -3l2 3m-2 -3v-2l3 -1m-6 0l3 1" /><circle cx="12" cy="7.5" r=".5" fill="currentColor" /></svg>
-                                  </span>
-                                <span class="nav-link-title">
-                                    {{ __('bap.support') }}
-                                  </span>
-                            </a>
-                            <div class="dropdown-menu @if(\Illuminate\Support\Facades\Route::is('panel.support.*')) show @endif " data-bs-popper="none">
-
-                                <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('panel.support.ticket.index')) active @endif @if(\Illuminate\Support\Facades\Route::is('panel.support.ticket.view')) active @endif" href="{{ route('panel.support.ticket.index') }}">
-                                    {{ __('bap.tickets') }}
-                                </a>
-
-                                <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('panel.support.ticket.create')) active @endif" href="{{ route('panel.support.ticket.create') }}">
-                                    {{ __('bap.create_ticket') }}
-                                </a>
-
-                            </div>
-                        </li>
-                    @endif
-
-                </ul>
+                @include('sitebill-livewire::layouts.global.sidebar-menu', ['menu' => $menu])
 
 
                 <ul class="navbar-nav pt-lg-3">
-                    @can('admin_dashboard_index')
-                        <li class="nav-item @if(\Illuminate\Support\Facades\Route::is('admin.dashboard.index')) active @endif">
-                            <a class="nav-link" href="{{ route('admin.dashboard.index') }}" >
-                                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
-	                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="13" r="2" /><line x1="13.45" y1="11.55" x2="15.5" y2="9.5" /><path d="M6.4 20a9 9 0 1 1 11.2 0z" /></svg>
-                                    </span>
-                                <span class="nav-link-title">
-                                      {{ __('bap.dashboard') }}
-                                    </span>
-                            </a>
-                        </li>
-                    @endcan
-                    @can('admin_user_management')
-                        <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('admin.user.*')) show  active @endif">
-                            <a class="nav-link dropdown-toggle" href="#navbar-user" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">
-                          <span class="nav-link-icon d-md-none d-lg-inline-block">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="9" cy="7" r="4" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
-                          </span>
-                                <span class="nav-link-title">
-                            {{ __('bap.user_management') }}
-                          </span>
-                            </a>
-                            <div class="dropdown-menu @if(\Illuminate\Support\Facades\Route::is('admin.user.*')) show @endif " data-bs-popper="none">
-                                @can('admin_user_index')
-                                    <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.index')) active @endif" href="{{ route('admin.user.index') }}">
-                                        {{ __('bap.users') }}
-                                    </a>
-                                @endcan
-                                @can('admin_user_teams')
-                                    <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.team.index')) active @endif" href="{{ route('admin.user.team.index') }}">
-                                        {{ __('bap.teams_word') }}
-                                    </a>
-                                @endcan
-                                @can('admin_user_roles')
-                                    <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.role.index')) active @endif" href="{{ route('admin.user.role.index') }}">
-                                        {{ __('bap.roles_word') }}
-                                    </a>
-                                @endcan
-                                @can('admin_user_permissions')
-                                    <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.permission.index')) active @endif" href="{{ route('admin.user.permission.index') }}">
-                                        {{ __('bap.permissions_word') }}
-                                    </a>
-                                @endcan
-                                @can('admin_user_verify')
-                                    <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.verify.index')) active @endif" href="{{ route('admin.user.verify.index') }}">
-                                        {{ __('bap.user_verifies') }}
-                                    </a>
-                                @endcan
-                            </div>
-                        </li>
-                    @endcan
                     @can('admin_content_management')
                         <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('admin.content.*')) show  active @endif">
                             <a class="nav-link dropdown-toggle" href="#navbar-user" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">
